@@ -1,16 +1,11 @@
 import React from "react";
-import Header from "./Components/Header";
-import Blanace from "./Components/Balance";
-import History from "./Components/History";
-import Transaction from "./Components/Transaction";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Balance from "./Components/Balance";
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <Blanace />
-      <History />
-      <Transaction />
+      <Balance />
     </div>
   );
 };

@@ -1,0 +1,29 @@
+* {
+  font-family: "Oswald", sans-serif !important;
+}
+
+.container-main {
+  max-width: 400px;
+  min-height: 450px;
+  background-color: rgb(218, 218, 194);
+  margin: 50px auto;
+}
+
+.expense {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255);
+}
+
+.trans-list > li {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.separator {
+  border: 1px solid black;
+}

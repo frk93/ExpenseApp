@@ -1,4 +1,4 @@
-#Expense Tracker - React
+# Expense Tracker - React
 
 **This is a sample practise expense tracker application created in React. 
 I used React Context API and react Hooks to give the app ability of using global state.**

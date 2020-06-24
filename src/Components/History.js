@@ -1,27 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/main.css";
 import Transaction from "./Transaction";
+import globalContext from "../Context/globalContext";
 
 const History = () => {
-  let transaction = [
-    { name: "Bill", amount: +100 },
-    { name: "Payment", amount: -44 },
-    { name: "Contract", amount: -231 },
-    { name: "Purchased", amount: +55 },
-  ];
+  let { state, stateDispatch } = useContext(globalContext);
+
+  const deletelist = (id) => {
+    stateDispatch({
+      type: "delete_transaction",
+      payload: id,
+    });
+  };
+
   return (
     <div className="mt-2">
       <h4>History</h4>
-      <hr />
       <ul className="trans-list list-unstyled">
-        {transaction.map((val) => {
-          return (
-            <li>
-              <span>{val.name}</span>
-              <span>{val.amount}</span>
-            </li>
-          );
-        })}
+        {state.transactions
+          ? state.transactions.map((val) => {
+              return (
+                <li
+                  key={val.id}
+                  className={`delete ${val.amount < 0 ? "minus" : "plus"}`}
+                  onClick={() => {
+                    deletelist(val.id);
+                  }}
+                >
+                  <span>{val.name}</span>
+                  <span>${val.amount}</span>
+                </li>
+              );
+            })
+          : "No Transaction"}
       </ul>
       <Transaction />
     </div>
